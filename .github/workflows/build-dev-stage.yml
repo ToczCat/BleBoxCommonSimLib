@@ -1,0 +1,9 @@
+name: 'Build dev stage'
+
+on:
+  pull_request:
+
+jobs:
+  call-build-dev:
+    uses: DariuszGarbarz/Tools/.github/workflows/reusable-blenug-dev.yml@master
+    secrets: inherit
