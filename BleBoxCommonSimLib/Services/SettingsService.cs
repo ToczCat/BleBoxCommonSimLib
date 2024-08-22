@@ -1,5 +1,5 @@
-﻿using BleBoxCommonSimLib.Enums;
-using BleBoxCommonSimLib.Models;
+﻿using BleBoxModels.Common.Enums;
+using BleBoxModels.Common.Models;
 
 namespace BleBoxCommonSimLib.Services;
 

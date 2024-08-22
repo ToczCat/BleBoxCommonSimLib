@@ -1,4 +1,4 @@
-﻿using BleBoxCommonSimLib.Models;
+﻿using BleBoxModels.Common.Models;
 using BleBoxCommonSimLib.Services;
 using Microsoft.AspNetCore.Mvc;
 

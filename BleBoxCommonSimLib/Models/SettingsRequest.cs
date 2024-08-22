@@ -1,4 +1,6 @@
-﻿namespace BleBoxCommonSimLib.Models;
+﻿using BleBoxModels.Common.Models;
+
+namespace BleBoxCommonSimLib.Models;
 
 public class SettingsRequest
 {

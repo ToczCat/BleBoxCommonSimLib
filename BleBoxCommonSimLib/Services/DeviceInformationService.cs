@@ -1,4 +1,4 @@
-﻿using BleBoxCommonSimLib.Models;
+﻿using BleBoxModels.Common.Models;
 using System.Net;
 
 namespace BleBoxCommonSimLib.Services;
