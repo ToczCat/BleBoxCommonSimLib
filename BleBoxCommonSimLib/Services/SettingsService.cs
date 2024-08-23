@@ -6,10 +6,10 @@ namespace BleBoxCommonSimLib.Services;
 public interface ISettingsService
 {
     Func<SettingsBase, object>? ObtainFullSettings { get; set; }
-    Func<object, SettingsBase>? UpdateFullSettings { get; set; }
+    Func<string, SettingsBase>? UpdateFullSettings { get; set; }
 
     object ReadSettings();
-    void UpdateSettings(object request);
+    void UpdateSettings(string request);
 }
 
 public class SettingsService(IDeviceInformationService deviceInformation) : ISettingsService
@@ -19,7 +19,7 @@ public class SettingsService(IDeviceInformationService deviceInformation) : ISet
     private Toggle _statusLedEnabled = Toggle.Enabled;
 
     public Func<SettingsBase, object>? ObtainFullSettings { get; set; }
-    public Func<object, SettingsBase>? UpdateFullSettings { get; set; }
+    public Func<string, SettingsBase>? UpdateFullSettings { get; set; }
 
     public object ReadSettings()
     {
@@ -44,7 +44,7 @@ public class SettingsService(IDeviceInformationService deviceInformation) : ISet
         return settings;
     }
 
-    public void UpdateSettings(object request)
+    public void UpdateSettings(string request)
     {
         if (UpdateFullSettings == null)
             throw new Exception("Full settings func is null");

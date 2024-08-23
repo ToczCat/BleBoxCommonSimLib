@@ -21,7 +21,7 @@ public class SettingsController(ISettingsService settings, ILogger<SettingsContr
     }
 
     [HttpPost("api/settings/set")]
-    public IActionResult SettingsSetRequested(object request)
+    public IActionResult SettingsSetRequested(string request)
     {
         try
         {
