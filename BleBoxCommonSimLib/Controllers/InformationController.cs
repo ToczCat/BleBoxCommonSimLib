@@ -28,7 +28,7 @@ public class InformationController(IDeviceInformationService deviceInformationSe
         {
             var deviceUptime = deviceInformationService.ReadUptime();
 
-            return Ok(new { UpTimeS = deviceUptime.TotalSeconds.ToString() });
+            return Ok(new { UpTimeS = ((int)deviceUptime.TotalSeconds).ToString() });
         }
         catch
         {

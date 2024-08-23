@@ -55,7 +55,7 @@ public class DeviceInformationService : IDeviceInformationService
 
     public TimeSpan ReadUptime()
     {
-        return _createdDateTime - DateTime.Now;
+        return (_createdDateTime - DateTime.Now).Negate();
     }
 
     public async Task PerformFirmwareUpdate()

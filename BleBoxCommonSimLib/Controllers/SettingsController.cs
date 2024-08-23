@@ -1,9 +1,10 @@
 ﻿using BleBoxCommonSimLib.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace BleBoxCommonSimLib.Controllers;
 
-public class SettingsController(ISettingsService settings) : ControllerBase
+public class SettingsController(ISettingsService settings, ILogger<SettingsController> log) : ControllerBase
 {
     [HttpGet("api/settings/state")]
     public IActionResult SettingsRequested()
@@ -12,8 +13,9 @@ public class SettingsController(ISettingsService settings) : ControllerBase
         {
             return Ok(new { Settings = settings.ReadSettings() });
         }
-        catch
+        catch(Exception ex)
         {
+            log.LogError("Error occurred during settings request: {ex}", ex);
             return BadRequest();
         }
     }
