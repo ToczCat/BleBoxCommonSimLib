@@ -54,7 +54,7 @@ public class NetworkController(INetworkService networkService, IDeviceInformatio
     }
 
     [HttpPost("api/wifi/connect")]
-    public IActionResult PerformWifiConnect(WifiConnectRequest request)
+    public IActionResult PerformWifiConnect([FromBody] WifiConnectRequest request)
     {
         try
         {

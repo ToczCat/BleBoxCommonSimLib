@@ -22,7 +22,7 @@ public class SettingsController(ISettingsService settings, ILogger<SettingsContr
     }
 
     [HttpPost("api/settings/set")]
-    public IActionResult SettingsSetRequested(JsonObject request)
+    public IActionResult SettingsSetRequested([FromBody] JsonObject request)
     {
         try
         {

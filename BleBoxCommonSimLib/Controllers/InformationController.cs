@@ -37,7 +37,7 @@ public class InformationController(IDeviceInformationService deviceInformationSe
     }
 
     [HttpPost("api/ota/update")]
-    public async Task<IActionResult> FirmwareUpdateRequested(SettingsBase Settings)
+    public async Task<IActionResult> FirmwareUpdateRequested([FromBody] SettingsBase Settings)
     {
         try
         {
