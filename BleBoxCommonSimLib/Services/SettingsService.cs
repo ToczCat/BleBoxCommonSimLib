@@ -12,7 +12,7 @@ public interface ISettingsService
     void UpdateSettings(object request);
 }
 
-public class SettingsService(DeviceInformationService deviceInformation) : ISettingsService
+public class SettingsService(IDeviceInformationService deviceInformation) : ISettingsService
 {
     private Toggle _tunnelEnabled = Toggle.Enabled;
     private Toggle? _tunnelLogEnabled = Toggle.Enabled;
