@@ -1,15 +1,16 @@
 ﻿using BleBoxModels.Common.Enums;
 using BleBoxModels.Common.Models;
+using System.Text.Json.Nodes;
 
 namespace BleBoxCommonSimLib.Services;
 
 public interface ISettingsService
 {
     Func<SettingsBase, object>? ObtainFullSettings { get; set; }
-    Func<string, SettingsBase>? UpdateFullSettings { get; set; }
+    Func<JsonObject, SettingsBase>? UpdateFullSettings { get; set; }
 
     object ReadSettings();
-    void UpdateSettings(string request);
+    void UpdateSettings(JsonObject request);
 }
 
 public class SettingsService(IDeviceInformationService deviceInformation) : ISettingsService
@@ -19,7 +20,7 @@ public class SettingsService(IDeviceInformationService deviceInformation) : ISet
     private Toggle _statusLedEnabled = Toggle.Enabled;
 
     public Func<SettingsBase, object>? ObtainFullSettings { get; set; }
-    public Func<string, SettingsBase>? UpdateFullSettings { get; set; }
+    public Func<JsonObject, SettingsBase>? UpdateFullSettings { get; set; }
 
     public object ReadSettings()
     {
@@ -44,7 +45,7 @@ public class SettingsService(IDeviceInformationService deviceInformation) : ISet
         return settings;
     }
 
-    public void UpdateSettings(string request)
+    public void UpdateSettings(JsonObject request)
     {
         if (UpdateFullSettings == null)
             throw new Exception("Full settings func is null");

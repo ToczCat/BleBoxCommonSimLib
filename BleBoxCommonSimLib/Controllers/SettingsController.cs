@@ -1,6 +1,7 @@
 ﻿using BleBoxCommonSimLib.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Text.Json.Nodes;
 
 namespace BleBoxCommonSimLib.Controllers;
 
@@ -21,7 +22,7 @@ public class SettingsController(ISettingsService settings, ILogger<SettingsContr
     }
 
     [HttpPost("api/settings/set")]
-    public IActionResult SettingsSetRequested(string request)
+    public IActionResult SettingsSetRequested(JsonObject request)
     {
         try
         {
