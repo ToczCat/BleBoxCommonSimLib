@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Company>ToczCat</Company>
     <Product>BleBox Common Sim Library</Product>
     <Copyright>Copyright (C) 2024 Dariusz Garbarz</Copyright>
   </PropertyGroup>
@@ -13,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BleBoxModels" Version="1.0.0" />
+    <PackageReference Include="BleBoxModels" Version="1.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
   </ItemGroup>
 

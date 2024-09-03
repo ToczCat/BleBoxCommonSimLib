@@ -9,5 +9,5 @@ on:
 
 jobs:
   call-release:
-    uses: DariuszGarbarz/Tools/.github/workflows/reusable-blenug-release.yml@master
+    uses: ToczCat/Tools/.github/workflows/reusable-blenug-release.yml@master
     secrets: inherit
